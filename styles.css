@@ -1,0 +1,84 @@
+/* @override http://cai.zone/podcast-viewer/styles.css */
+
+body
+{
+	background-color: #d2d2d2;
+}
+
+html,
+body,
+p,
+.masthead a
+{
+	color: #202020;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+a
+{
+	color: #2b24b8;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #9800ff;
+}
+
+.site-title
+{
+	font-size: 29px;
+}
+
+.title
+{
+	font-weight: bold;
+	margin-bottom: 18px;
+}
+
+#wrapper
+{
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.podcast-info-box
+{
+	border-style: solid;
+}
+
+.box
+{
+	background-color: rgba(159,159,159,0.4999732);
+	padding: 36px;
+	border-radius: 20px;
+	margin-bottom: 18px;
+}
+
+.podcast-title
+{
+	font-size: 29px;
+	margin-bottom: 11px;
+}
+
+.image,
+.details
+{
+	display: inline-block;
+}
+
+.image
+{
+	margin-right: 22px;
+}
+
+.details
+{
+	width: 403px;
+}
+
+.episode-title
+{
+	margin-bottom: 13px;
+}
