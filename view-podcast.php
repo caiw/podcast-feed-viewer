@@ -1,11 +1,5 @@
 <?php
 
-include 'functions.php';
-
-$site_name = "Podcast Viewer";
-$root_url = "http://cai.zone/podcast-viewer/";
-
-$podcast_feed_url = $_SERVER[QUERY_STRING];
 // TODO: Validation
 // TODO: Error checking
 $podcast_feed_xml = simplexml_load_file($podcast_feed_url);
@@ -37,9 +31,7 @@ $last_updated = $podcast_info -> lastBuildDate;
 </head>
 <body>
 	<div id="wrapper">
-		<div class="masthead">
-			<div class="site-title title"><a href="<?php echo($root_url); ?>">Podcast Viewer</a></div>
-		</div>
+		<?php include 'header.php' ?>
 		<div class="podcast-info-box box">
 			<div class="podcast-title title"><a href="<?php echo($podcast_homepage); ?>"><?php echo($podcast_title); ?></a></div>
 			<div class="box-body">
@@ -113,15 +105,7 @@ $last_updated = $podcast_info -> lastBuildDate;
 			} // foreach
 			?>
 		</div>
-		<div class="footer">
-			<ul>
-				<li>All content seen here &copy; its creator.</li>
-				<li>All code genreating this site is released as <a href="https://creativecommons.org/publicdomain/zero/1.0/">public domain</a>.</li>
-				<li>Source code available <a href="#">on Github</a>.</li>
-				<li>Please report any issues <a href="#">on Github</a>.</li>
-				<li>Built and hosted by <a href="http://cai.zone">Cai</a>.</li>
-			</ul>
-		</div>
+		<?php include 'footer.php'; ?>
 	</div>
 </body>
 </html>
