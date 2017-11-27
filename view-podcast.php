@@ -42,18 +42,20 @@ $last_updated = $podcast_info -> lastBuildDate;
 		</div>
 		<div class="podcast-info-box box">
 			<div class="podcast-title title"><a href="<?php echo($podcast_homepage); ?>"><?php echo($podcast_title); ?></a></div>
-			<div class="podcast-image image">
-				<img src="<?php echo($podcast_image_url); ?>" style="width:256px; height:256px;" />
-			</div>
-			<div class="podcast-details details">
-				<div class="podcast-description description">
-					<?php echo($podcast_description); ?>
+			<div class="box-body">
+				<div class="podcast-image image">
+					<img src="<?php echo($podcast_image_url); ?>" />
 				</div>
-				<div class="metadata podcast-metadata">
-					<ul>
-						<li>Last updated: <?php echo($last_updated); ?>.</li>
-						<li>Available episodes: <?php echo(sizeof($podcast_feed_xml -> channel -> item)) ?></li>
-					</ul>
+				<div class="podcast-details details">
+					<div class="podcast-description description">
+						<?php echo($podcast_description); ?>
+					</div>
+					<div class="metadata podcast-metadata">
+						<ul>
+							<li>Last updated: <?php echo($last_updated); ?>.</li>
+							<li>Available episodes: <?php echo(sizeof($podcast_feed_xml -> channel -> item)) ?></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -84,21 +86,25 @@ $last_updated = $podcast_info -> lastBuildDate;
 				}
 			?>
 			<div id="episode-entry-<?php echo($podcast_index); ?>" class="episode-entry box">
-				<div class="episode-title title"><a href="<?php echo($episode_link); ?>"><?php echo($episode_title); ?></a></div>
-				<div class="episode-image image">
-					<a href="<?php echo($episode_link); ?>"><img src="<?php echo($episode_image); ?>" style="width:256px" /></a>
+				<div class="episode-title title">
+					<a href="<?php echo($episode_link); ?>"><?php echo($episode_title); ?></a>
 				</div>
-				<div class="episode-details details">
-					<div class="episode-description">
-						<?php echo($episode_description); ?>
+				<div class="episode-body">
+					<div class="episode-image image">
+						<a href="<?php echo($episode_link); ?>"><img src="<?php echo($episode_image); ?>" /></a>
 					</div>
-					<div class="episode-links">
-						<a id="podcast-download-link-<?php echo($podcast_index); ?>" class="podcast-media-link" href="<?php echo($media_file_url); ?>" type="<?php echo($media_file_type); ?>">Click to listen</a>.
-					</div>
-					<div class="metadata episode-metadata">
-						<ul>
-							<li>Published: <?php echo($episode_timestamp); ?></li>
-						</ul>
+					<div class="episode-details details">
+						<div class="episode-description">
+							<?php echo($episode_description); ?>
+						</div>
+						<div class="episode-media">
+							<a id="podcast-download-link-<?php echo($podcast_index); ?>" class="episode-media-link" href="<?php echo($media_file_url); ?>" type="<?php echo($media_file_type); ?>">Click to listen.</a>
+						</div>
+						<div class="metadata episode-metadata">
+							<ul>
+								<li>Published: <?php echo($episode_timestamp); ?></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

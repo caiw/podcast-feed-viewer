@@ -14,6 +14,13 @@ p,
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
+#wrapper
+{
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 a
 {
 	color: #2b24b8;
@@ -22,25 +29,19 @@ a
 
 a:hover
 {
-	color: #9800ff;
+	text-decoration: underline;
 }
 
 .site-title
 {
-	font-size: 29px;
+	font-size: 37px;
+	margin-bottom: 25px;
+	margin-left: 36px;
 }
 
 .title
 {
 	font-weight: bold;
-	margin-bottom: 18px;
-}
-
-#wrapper
-{
-	max-width: 800px;
-	margin-right: auto;
-	margin-left: auto;
 }
 
 .box
@@ -54,26 +55,61 @@ a:hover
 .podcast-title
 {
 	font-size: 29px;
-	margin-bottom: 11px;
+	margin-bottom: 22px;
+}
+
+.podcast-image img
+{
+	width: 300px;
+}
+
+.episode-image img
+{
+	width:  200px;
+}
+
+.episode-title
+{
 }
 
 .podcast-image,
-.podcast-details
+.podcast-details,
+.episode-image,
+.episode-details
 {
 	display: inline-block;
+	vertical-align: top;
 }
 
-.podcast-image
+.podcast-image,
+.episode-image
 {
 	margin-right: 22px;
 }
 
 .podcast-details
 {
-	width: 403px;
+	max-width: 400px;
 }
 
 .episode-title
 {
-	margin-bottom: 13px;
+	margin-bottom: 18px;
+	font-size: larger;
+}
+
+.episode-details
+{
+	max-width: 500px;
+}
+
+.episode-media
+{
+	font-weight: bold;
+	margin: 15px 0;
+}
+
+.episode-media audio
+{
+	width: 100%;
 }
