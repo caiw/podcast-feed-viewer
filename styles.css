@@ -43,11 +43,6 @@ a:hover
 	margin-left: auto;
 }
 
-.podcast-info-box
-{
-	border-style: solid;
-}
-
 .box
 {
 	background-color: rgba(159,159,159,0.4999732);
@@ -62,18 +57,18 @@ a:hover
 	margin-bottom: 11px;
 }
 
-.image,
-.details
+.podcast-image,
+.podcast-details
 {
 	display: inline-block;
 }
 
-.image
+.podcast-image
 {
 	margin-right: 22px;
 }
 
-.details
+.podcast-details
 {
 	width: 403px;
 }

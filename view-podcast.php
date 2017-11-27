@@ -1,5 +1,7 @@
 <?php
 
+include 'functions.php';
+
 $site_name = "Podcast Viewer";
 $root_url = "http://cai.zone/podcast-viewer/";
 
@@ -44,7 +46,9 @@ $last_updated = $podcast_info -> lastBuildDate;
 				<img src="<?php echo($podcast_image_url); ?>" style="width:256px; height:256px;" />
 			</div>
 			<div class="podcast-details details">
-			<div class="podcast-description description"><?php echo($podcast_description); ?></div>
+				<div class="podcast-description description">
+					<?php echo($podcast_description); ?>
+				</div>
 				<div class="metadata podcast-metadata">
 					<ul>
 						<li>Last updated: <?php echo($last_updated); ?>.</li>
@@ -59,6 +63,7 @@ $last_updated = $podcast_info -> lastBuildDate;
 			foreach ($podcast_feed_xml -> channel -> item as $episode_info) {
 
 				$episode_title = $episode_info -> title;
+				$episode_description = $episode_info -> description;
 				$episode_image = (new SimpleXMLElement($episode_info -> children('itunes', true) ->image -> asXml())) ['href'];
 				$episode_timestamp = $episode_info -> pubDate;
 				$episode_link = $episode_info -> link;
@@ -75,8 +80,8 @@ $last_updated = $podcast_info -> lastBuildDate;
 					$media_file_url = $episode_info -> enclosure['url'];
 					$media_file_type = $episode_info -> enclosure['type'];
 					$media_file_size = $episode_info -> enclosure['length'];
+				
 				}
-
 			?>
 			<div id="episode-entry-<?php echo($podcast_index); ?>" class="episode-entry box">
 				<div class="episode-title title"><a href="<?php echo($episode_link); ?>"><?php echo($episode_title); ?></a></div>
@@ -84,6 +89,9 @@ $last_updated = $podcast_info -> lastBuildDate;
 					<a href="<?php echo($episode_link); ?>"><img src="<?php echo($episode_image); ?>" style="width:256px" /></a>
 				</div>
 				<div class="episode-details details">
+					<div class="episode-description">
+						<?php echo($episode_description); ?>
+					</div>
 					<div class="episode-links">
 						<a id="podcast-download-link-<?php echo($podcast_index); ?>" class="podcast-media-link" href="<?php echo($media_file_url); ?>" type="<?php echo($media_file_type); ?>">Click to listen</a>.
 					</div>
@@ -96,7 +104,7 @@ $last_updated = $podcast_info -> lastBuildDate;
 			</div>
 			<?php
 				$podcast_index ++;
-			}
+			} // foreach
 			?>
 		</div>
 		<div class="footer">
