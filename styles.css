@@ -113,3 +113,24 @@ a:hover
 {
 	width: 100%;
 }
+
+.viewer-blurb
+{
+	margin-bottom: 15px;
+}
+
+.feed-form input,
+.feed-form button
+{
+	font-size: larger;
+}
+
+.feed-form input
+{
+	width: 100%;
+}
+
+.feed-form
+{
+	text-align: right;
+}
