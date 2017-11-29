@@ -20,7 +20,7 @@
 				<div class="feed-form">
 					<form action="index.php" method="GET">
 						<input type="text" name="feed" placeholder="http://example.com/podcast.rss">
-						<button type="submit">"View podcast feed"</button>
+						<button type="submit">View podcast feed</button>
 					</form>
 				</div>
 			</div>
