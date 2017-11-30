@@ -1,4 +1,4 @@
-/* @override http://cai.zone/podcast-viewer/styles.css */
+/* @override http://podviewer.cai.zone/styles.css */
 
 body
 {
@@ -133,4 +133,11 @@ a:hover
 .feed-form
 {
 	text-align: right;
+}
+
+.footer .links
+{
+	max-width: 390px;
+	display: inline-block;
+	vertical-align: top;
 }
