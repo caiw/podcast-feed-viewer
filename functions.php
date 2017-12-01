@@ -49,4 +49,10 @@ $root_url = 'index.php';
 
 $podcast_feed_url = $_GET['feed'];
 
+function redirect_to_error_page() {
+      global $podcast_feed_url;
+      redirect_with_status(400, "./error-page.php?feed=$podcast_feed_url");
+      exit;
+}
+
 ?>
