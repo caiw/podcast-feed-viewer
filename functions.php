@@ -1,4 +1,4 @@
-function redirect_with_status($num, $url) {
+<?php function redirect_with_status($num, $url) {
    static $http = array (
        100 => "HTTP/1.1 100 Continue",
        101 => "HTTP/1.1 101 Switching Protocols",
@@ -43,4 +43,4 @@ function redirect_with_status($num, $url) {
    header ($http[$num]);
    header ("Location: $url");
 }
-}
+?>

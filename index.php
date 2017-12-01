@@ -1,6 +1,6 @@
 <?php
 
-include 'functions.php';
+require('functions.php');
 
 $site_name = "Podcast Viewer";
 $root_url = 'index.php';
