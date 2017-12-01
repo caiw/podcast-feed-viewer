@@ -4,6 +4,11 @@
 // TODO: Error checking
 $podcast_feed_xml = simplexml_load_file($podcast_feed_url);
 
+if ($podcast_feed_xml === false) {
+	redirect_with_status(400, "./error-page.php?feed=$podcast_feed_url");
+	exit;
+}
+
 // Channel info
 
 $podcast_info = $podcast_feed_xml -> channel[0];

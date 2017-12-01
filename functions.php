@@ -43,4 +43,10 @@
    header ($http[$num]);
    header ("Location: $url");
 }
+
+$site_name = "Podcast Viewer";
+$root_url = 'index.php';
+
+$podcast_feed_url = $_GET['feed'];
+
 ?>
