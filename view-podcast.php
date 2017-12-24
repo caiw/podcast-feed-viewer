@@ -68,9 +68,17 @@ catch (Exception $e) {
 
 					$episode_title = $episode_info -> title;
 					$episode_description = $episode_info -> description;
-					$episode_image = (new SimpleXMLElement($episode_info -> children('itunes', true) ->image -> asXml())) ['href'];
 					$episode_timestamp = $episode_info -> pubDate;
 					$episode_link = $episode_info -> link;
+
+					# Try getting image
+					try {
+						$episode_image = (new SimpleXMLElement($episode_info -> children('itunes', true) ->image -> asXml())) ['href'];
+						echo("TRIED");
+					}
+					catch (Exception $ex) {
+						$episode_image = null;
+					}
 
 					# Try getting media info from media tag
 					try {
@@ -92,9 +100,13 @@ catch (Exception $e) {
 					<a href="<?php echo($episode_link); ?>"><?php echo($episode_title); ?></a>
 				</div>
 				<div class="episode-body">
+					<?php if ($episode_image) { ?>
 					<div class="episode-image image">
-						<a href="<?php echo($episode_link); ?>"><img src="<?php echo($episode_image); ?>" /></a>
+						<a href="<?php echo($episode_link); ?>">
+							<img src="<?php echo($episode_image); ?>" />
+						</a>
 					</div>
+					<?php } // if ?>
 					<div class="episode-details details">
 						<div class="episode-description">
 							<?php echo($episode_description); ?>
