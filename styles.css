@@ -103,6 +103,11 @@ a:hover
 	max-width: 500px;
 }
 
+.episode-details img
+{
+	width: 100px;
+}
+
 .episode-media
 {
 	font-weight: bold;
